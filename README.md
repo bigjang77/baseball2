@@ -25,7 +25,7 @@ CREATE TABLE player(
 	name VARCHAR(20),
 	position VARCHAR(20),
 	team_Id INT,
-	isouter BOOLEAN,
+	is_outer BOOLEAN,
 	createdAt timestamp
 );
 
@@ -45,11 +45,11 @@ VALUES("두산","2" ,now());
 INSERT into team(NAME, stadium_id, createdAt)
 VALUES("키움","3" ,NOW());
 
-INSERT into player(NAME, POSITION,team_id,isouter,createdAt)
+INSERT into player(NAME, POSITION,team_id,is_outer,createdAt)
 VALUES("이대호","1루수","1",0,now());
-INSERT into player(NAME, POSITION,team_id,isouter,createdAt)
+INSERT into player(NAME, POSITION,team_id,is_outer,createdAt)
 VALUES("홍길동","외야수","2",0,NOW());
-INSERT into player(NAME, POSITION,team_id,isouter,createdAt)
+INSERT into player(NAME, POSITION,team_id,is_outer,createdAt)
 VALUES("장보고","투수","3",0,now());
 commit;
 ```
