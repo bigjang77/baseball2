@@ -7,7 +7,7 @@
 		<div class="mb-3 mt-3">
 			<input id="name" type="text" class="form-control" placeholder="Enter name">
 		</div>
-		<button id="btnInsert"  type="button" class="btn btn-primary">글쓰기완료</button>
+		<button id="btnInsert"  type="button" class="btn btn-primary">구장등록완료</button>
 	</form>
 </div>
 

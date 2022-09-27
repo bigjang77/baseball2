@@ -18,30 +18,29 @@ import site.metacoding.red.web.dto.CMRespDto;
 import site.metacoding.red.web.dto.stadium.StadiumInsertReqDto;
 import site.metacoding.red.web.dto.team.TeamInsertReqDto;
 
-
 @RequiredArgsConstructor
 @Controller
 public class TeamController {
 
 	private final TeamService teamService;
 	private final StadiumService stadiumService;
-	
+
 	@GetMapping("/team")
 	public String list(Model model) {
 		List<Team> teamList = teamService.목록보기();
 		model.addAttribute("teamList", teamList);
-		return "team/list";
+		return "/team/list";
 	}
-	
-	@GetMapping({"/" , "/teamForm"})
-	public String teamForm(Model model){
+
+	@GetMapping("/teamForm")
+	public String teamForm(Model model) {
 		List<Stadium> stadiumList = stadiumService.목록보기();
-		model.addAttribute("stadiumList",stadiumList);
+		model.addAttribute("stadiumList", stadiumList);
 		return "/team/saveForm";
 	}
-	
+
 	@PostMapping("/team")
-	public @ResponseBody CMRespDto<?> insert(@RequestBody TeamInsertReqDto teamInsertReqDto){
+	public @ResponseBody CMRespDto<?>insert(@RequestBody TeamInsertReqDto teamInsertReqDto) {
 		teamService.팀등록(teamInsertReqDto);
 		return new CMRespDto<>(1, "팀등록성공", null);
 	}

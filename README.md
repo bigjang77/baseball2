@@ -58,4 +58,10 @@ commit;
 
 ###TIP
 
+####마이바티스 카멜세팅
+```
+        org.apache.ibatis.session.Configuration config = new org.apache.ibatis.session.Configuration();
+        config.setMapUnderscoreToCamelCase(true);
+        sessionFactory.setConfiguration(config);
+```
 #### 마리아DB 오토커밋 설정해제
