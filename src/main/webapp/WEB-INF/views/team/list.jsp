@@ -21,10 +21,9 @@
 					<td>${team.stadiumName}</td>
 					<td>${team.name}</td>
 					<td>${team.createdAt}</td>
-					<td></td>
 					<td><button class="btn btn-danger">삭제</button></td>
 				</tr>
-				</c:forEach>
+			</c:forEach>
 		</tbody>
 	</table>
 </div>
