@@ -53,3 +53,7 @@ INSERT into player(NAME, POSITION,team_id,is_outer,createdAt)
 VALUES("장보고","투수","3",0,now());
 commit;
 ```
+
+###TIP
+
+#### 마리아DB 오토커밋 설정해제

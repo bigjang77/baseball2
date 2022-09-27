@@ -9,6 +9,7 @@ import lombok.Setter;
 @Getter
 public class Stadium {
 	private Integer id;
+	private Integer no;//db에 없는값
 	private String name;
 	private Timestamp createdAt;
 }
