@@ -15,7 +15,10 @@ public class PlayerService {
 
 	private final PlayerDao playerDao;
 
-
+	public void 선수삭제(Integer id) {
+		playerDao.deleteById(id);
+	}
+	
 	
 	public List<Player> 목록보기() {
 		return playerDao.findAll();

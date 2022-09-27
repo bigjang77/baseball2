@@ -21,7 +21,7 @@
 	<insert id="insert">
 		INSERT into player(name, POSITION, team_id, is_outer,
 		created_at)
-		VALUES(#{name},#{position},#{teamId},0,now());
+		VALUES(#{name},#{position},#{teamId},0,now())
 	</insert>
 
 	<select id="findAll"
@@ -44,7 +44,7 @@
 	</insert>
 
 	<delete id="deleteById">
-
+		DELETE FROM player WHERE id = #{id}
 	</delete>
 
 </mapper>

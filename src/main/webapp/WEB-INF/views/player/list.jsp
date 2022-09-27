@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <%@ include file="../layout/header.jsp"%>
 
@@ -23,11 +24,28 @@
 					<td>${player.name}</td>
 					<td>${player.position}</td>
 					<td>${player.createdAt}</td>
-					<td><button class="btn btn-danger">삭제</button></td>
+					<td><button onclick="deleteById(${player.id});" class="btn btn-danger">삭제</button></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 </div>
+
+<script>
+	function deleteById(id){
+		$.ajax("/player/"+id,{
+			type: "DELETE",
+			dataType: "json"
+		}).done((res)=>{
+			if(res.code == 1){ // 성공
+				location.reload();
+			}else{ // 실패
+				alert("경기장 삭제에 실패하였습니다.");
+			}
+		});
+	}
+
+</script>
+
 
 <%@ include file="../layout/footer.jsp"%>
