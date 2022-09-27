@@ -28,7 +28,7 @@ public class StadiumController {
 		return "/stadium/list";
 	}
 	
-	@GetMapping("/stadiumForm")
+	@GetMapping({"/" , "/stadiumForm"})
 	public String stadiumForm(){
 		return "/stadium/saveForm";
 	}

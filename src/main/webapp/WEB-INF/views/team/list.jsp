@@ -8,16 +8,23 @@
 		<thead>
 			<tr>
 				<th>번호</th>
-				<th>컬럼1</th>
-				<th>컬럼2</th>
+				<th>경기장이름</th>
+				<th>팀이름</th>
+				<th>팀창단일</th>
+				<th>삭제</th>
 			</tr>
 		</thead>
 		<tbody>
+			<c:forEach var="team" items="${teamList}">
 				<tr>
-					<td>1</td>
-					<td><a href="">내용1</a></td>
-					<td>내용2</td>
+					<td>${team.no}</td>
+					<td>${team.stadiumName}</td>
+					<td>${team.name}</td>
+					<td>${team.createdAt}</td>
+					<td></td>
+					<td><button class="btn btn-danger">삭제</button></td>
 				</tr>
+				</c:forEach>
 		</tbody>
 	</table>
 </div>
