@@ -15,6 +15,8 @@ public class PlayerService {
 
 	private final PlayerDao playerDao;
 
+
+	
 	public List<Player> 목록보기() {
 		return playerDao.findAll();
 	}

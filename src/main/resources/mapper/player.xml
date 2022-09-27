@@ -4,14 +4,30 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="site.metacoding.red.domain.player.PlayerDao">
 
+		
+
+
+	<select id="findPositionByTeam" resultType="hashmap">
+		SELECT
+		t.name,
+		if(p.position = '1루수', p.name, NULL) '1루수',
+		if(p.position = '외야수', p.name, NULL) '외야수',
+		if(p.position = '투수', p.name, NULL) '투수'
+		FROM player p
+		INNER JOIN team t
+		ON p.team_id = t.id
+	</select>
+
 	<insert id="insert">
-		INSERT into player(name, POSITION, team_id, is_outer, created_at)
+		INSERT into player(name, POSITION, team_id, is_outer,
+		created_at)
 		VALUES(#{name},#{position},#{teamId},0,now());
 	</insert>
 
 	<select id="findAll"
 		resultType="site.metacoding.red.domain.player.Player">
-		SELECT p.id, row_number() over(order BY p.id asc) as NO, t.name teamName, 
+		SELECT p.id, row_number() over(order BY p.id asc) as NO,
+		t.name teamName,
 		p.position, p.NAME, p.created_at
 		from
 		player p
